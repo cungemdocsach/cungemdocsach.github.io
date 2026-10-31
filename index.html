@@ -263,7 +263,7 @@ var PRODUCTS = [];
 var ALBUMS = [
   {id:"chuyen-de-ai", group:"Chuyên đề và lan tỏa",
    title:"Chuyên đề: Đọc sách trong thời đại AI – Đọc chủ động, tư duy sâu, sáng tạo",
-   date:"", place:"Nhà đa năng Trường THCS Nha Trang (trường chính)",
+   date:"Đang cập nhật", place:"Hội trường nhà trường",
    cover:"chuyen-de-ai-11.jpg",
    desc:"Hơn 200 học sinh cùng thầy cô tham dự chuyên đề giới thiệu cách đọc theo mô hình READ-AI.",
    sections:[
@@ -709,7 +709,7 @@ function albumCard(a){
   var cv=a.cover || (a.photos && a.photos[0] && a.photos[0].src);
   return '<article class="card">'+(cv? '<img src="'+esc(cv)+'" alt="'+esc(a.title)+'" loading="lazy" style="border-radius:12px;aspect-ratio:4/3;object-fit:cover;width:100%">':'')+
     '<p class="meta"><span class="tag mint">'+(a.photos?a.photos.length:0)+' ảnh</span></p>'+
-    '<p class="meta">'+esc(a.group)+(a.date? ' · '+esc(a.date) : '')+'</p><h3>'+esc(a.title)+'</h3><p class="small">'+esc(a.desc)+'</p>'+
+    '<p class="meta">'+esc(a.group)+' · '+esc(a.date)+'</p><h3>'+esc(a.title)+'</h3><p class="small">'+esc(a.desc)+'</p>'+
     '<div class="actions"><a class="link-btn" href="#album-'+esc(a.id)+'">Xem album →</a></div></article>';
 }
 function viewActivities(){
@@ -729,7 +729,7 @@ function viewAlbum(id){
   return '<section class="section"><div class="wrap">'+
     '<p><a class="link-btn" href="#hoat-dong">← Quay lại Góc hoạt động</a></p>'+
     '<p><span class="tag">'+esc(a.group)+'</span></p>'+
-    '<h2>'+esc(a.title)+'</h2><p class="muted">'+(a.date? 'Ngày tổ chức: '+esc(a.date)+' · ' : '')+'Địa điểm: '+esc(a.place)+'</p>'+
+    '<h2>'+esc(a.title)+'</h2><p class="muted">Ngày tổ chức: '+esc(a.date)+' · Địa điểm: '+esc(a.place)+'</p>'+
     (a.sections? a.sections.map(function(s){
       return '<h3 style="margin-top:22px">'+esc(s.h)+'</h3>'+
         (s.stats? '<div class="grid" style="margin-bottom:14px">'+s.stats.map(function(x){return '<div class="card"><div class="stat">'+esc(x.v)+'</div><p class="small" style="margin:0">'+esc(x.t)+'</p></div>';}).join("")+'</div>' : '')+
